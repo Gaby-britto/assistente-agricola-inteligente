@@ -1,6 +1,6 @@
-# 🌱 FarmTech Solutions – Fase 4: Assistente Agrícola Inteligente
+# FarmTech Solutions – Fase 4: Assistente Agrícola Inteligente
 
-## 📖 Introdução
+## Introdução
 
 A Fase 4 do projeto FarmTech Solutions tem como objetivo aplicar conceitos de Inteligência Artificial e Ciência de Dados ao contexto agrícola, transformando dados em informações úteis para apoiar a tomada de decisão no campo.
 
@@ -10,7 +10,7 @@ A solução integra banco de dados, aprendizado supervisionado e dashboard anal�
 
 ---
 
-## 🎯 Objetivos do Projeto
+## Objetivos do Projeto
 
 O projeto foi desenvolvido com os seguintes objetivos:
 
@@ -35,7 +35,7 @@ O projeto foi desenvolvido com os seguintes objetivos:
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 assistente-agricola-inteligente/
@@ -59,7 +59,7 @@ assistente-agricola-inteligente/
 
 ---
 
-## 📊 Base de Dados
+## Base de Dados
 
 Foi utilizada uma base de dados agrícolas simulada contendo aproximadamente 1000 registros.
 
@@ -78,7 +78,7 @@ Esses dados representam condições agrícolas utilizadas para treinamento e val
 
 ---
 
-## 🤖 Modelo de Machine Learning
+## Modelo de Machine Learning
 
 Foi implementado um modelo de Regressão Linear utilizando a biblioteca Scikit-Learn.
 
@@ -103,7 +103,7 @@ Após o treinamento, o modelo foi salvo em formato `.pkl` para utilização no d
 
 ---
 
-## 📈 Avaliação do Modelo
+## Avaliação do Modelo
 
 O desempenho do modelo foi avaliado utilizando métricas amplamente empregadas em problemas de regressão:
 
@@ -116,7 +116,7 @@ Essas métricas permitem analisar a precisão das previsões realizadas pelo mod
 
 ---
 
-## 📊 Dashboard Interativo
+## Dashboard Interativo
 
 O dashboard foi desenvolvido utilizando Streamlit e oferece uma interface amigável para gestores agrícolas.
 
@@ -133,7 +133,7 @@ O sistema permite que o usuário informe valores relacionados às condições do
 
 ---
 
-## 🌾 Recomendações Inteligentes
+## Recomendações Inteligentes
 
 Com base nos valores informados pelo usuário, o sistema fornece sugestões de manejo agrícola, incluindo:
 
@@ -146,7 +146,7 @@ Essas recomendações auxiliam o produtor rural na tomada de decisões mais efic
 
 ---
 
-## ▶️ Como Executar
+## Como Executar
 
 ### Instalar dependências
 
@@ -162,7 +162,7 @@ streamlit run app.py
 
 ---
 
-## 💡 Resultados Obtidos
+## Resultados Obtidos
 
 O projeto demonstrou que técnicas de Machine Learning podem ser aplicadas com sucesso para prever indicadores agrícolas e apoiar a tomada de decisão no campo.
 
@@ -170,7 +170,7 @@ A integração entre análise de dados, regressão e dashboard interativo permit
 
 ---
 
-## ✅ Conclusão
+## Conclusão
 
 O desenvolvimento do Assistente Agrícola Inteligente permitiu aplicar conceitos de Inteligência Artificial, Ciência de Dados e Agricultura Cognitiva em um cenário prático.
 
