@@ -23,7 +23,7 @@ O projeto foi desenvolvido com os seguintes objetivos:
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * Python
 * Pandas
