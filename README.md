@@ -180,7 +180,7 @@ Além disso, o projeto reforçou a importância da integração entre coleta de 
 
 ---
 
-## 👥 Integrantes
+## Integrantes
 
 * Gabriele Brito
 * Gilenisson Santos
