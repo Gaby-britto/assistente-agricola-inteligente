@@ -1,88 +1,170 @@
-# FarmTech Solutions – Fase 4: Assistente Agrícola Inteligente
+# 🌱 FarmTech Solutions – Fase 4: Assistente Agrícola Inteligente
 
-## Introdução
+##  Sobre o Projeto
 
-A Fase 4 do projeto FarmTech Solutions tem como objetivo aplicar conceitos de Inteligência Artificial e Ciência de Dados ao contexto agrícola, transformando dados em informações úteis para apoiar a tomada de decisão no campo.
+O FarmTech Solutions é um projeto desenvolvido com o objetivo de aplicar conceitos de Inteligência Artificial, Ciência de Dados, Banco de Dados e Agricultura Cognitiva para auxiliar a tomada de decisão no agronegócio.
 
-Nesta etapa, foi desenvolvido um protótipo de Assistente Agrícola Inteligente capaz de analisar dados agrícolas, prever a produtividade de uma cultura e fornecer recomendações de manejo agrícola por meio de técnicas de Machine Learning e visualização interativa de dados.
+Nesta fase foi desenvolvido um Assistente Agrícola Inteligente capaz de armazenar dados agrícolas, treinar modelos preditivos e gerar previsões de produtividade com recomendações automáticas de manejo agrícola.
 
-A solução integra banco de dados, aprendizado supervisionado e dashboard analítico, representando um exemplo prático de Agricultura Cognitiva, na qual sensores, dados e algoritmos trabalham juntos para otimizar a produção agrícola.
+A solução integra sensores simulados, banco de dados relacional, Machine Learning e dashboard analítico interativo, permitindo transformar dados em informações úteis para gestores agrícolas.
 
 ---
 
-## Objetivos do Projeto
+#  Objetivos
 
 O projeto foi desenvolvido com os seguintes objetivos:
 
-* Armazenar dados agrícolas simulados em uma base estruturada.
-* Aplicar técnicas de Machine Learning supervisionado utilizando regressão.
-* Prever a produtividade agrícola com base em fatores ambientais e operacionais.
-* Gerar recomendações automáticas de irrigação e manejo do solo.
-* Disponibilizar análises e previsões em um dashboard interativo desenvolvido com Streamlit.
-* Demonstrar a aplicação prática da Inteligência Artificial no agronegócio.
+- Simular a coleta de dados agrícolas por sensores IoT.
+- Armazenar dados em banco de dados relacional SQLite.
+- Aplicar técnicas de Machine Learning supervisionado.
+- Prever produtividade agrícola utilizando regressão.
+- Gerar recomendações automáticas de manejo.
+- Disponibilizar análises através de dashboard interativo.
+- Demonstrar a aplicação prática da Inteligência Artificial no agronegócio.
 
 ---
 
-## Tecnologias Utilizadas
+#  Conceito de Agricultura Cognitiva
+
+A Agricultura Cognitiva combina sensores, dados, algoritmos e sistemas inteligentes para auxiliar produtores rurais na tomada de decisões.
+
+Neste projeto, os dados agrícolas são utilizados para alimentar modelos de Inteligência Artificial capazes de identificar padrões e gerar previsões relacionadas à produtividade agrícola.
+
+Essa abordagem permite reduzir desperdícios, otimizar recursos e aumentar a eficiência da produção.
+
+---
+
+#  Arquitetura da Solução
+
+```text
+Sensores IoT Simulados
+          ↓
+   Geração dos Dados
+          ↓
+ CSV + Banco SQLite
+          ↓
+ Pré-processamento
+          ↓
+ Machine Learning
+          ↓
+ Treinamento
+          ↓
+ Avaliação
+          ↓
+ Modelo .PKL
+          ↓
+ Dashboard Streamlit
+          ↓
+ Previsões e Recomendações
+````
+
+---
+
+#  Tecnologias Utilizadas
+
+## Linguagem
 
 * Python
+
+## Banco de Dados
+
+* SQLite
+
+## Ciência de Dados
+
 * Pandas
+* NumPy
+
+## Machine Learning
+
 * Scikit-Learn
+* Joblib
+
+## Visualização
+
 * Streamlit
 * Matplotlib
 * Seaborn
-* Joblib
 
 ---
 
-## Estrutura do Projeto
+#  Estrutura do Projeto
 
 ```text
 assistente-agricola-inteligente/
 │
 ├── app.py
-├── requirements.txt
 ├── README.md
+├── requirements.txt
 │
 ├── data/
-│   └── dados_agricolas.csv
+│   ├── dados_agricolas.csv
+│   └── dados_agricolas.db
 │
 ├── models/
-│   └── modelo_produtividade.pkl
+│   ├── modelo_produtividade.pkl
+│   └── metricas.json
 │
 └── src/
     ├── data_generator.py
+    ├── database.py
     ├── treinar_modelo.py
-    ├── main.py
-    └── menu.py
+    ├── menu.py
+    └── main.py
 ```
 
 ---
 
-## Base de Dados
+#  Banco de Dados
 
-Foi utilizada uma base de dados agrícolas simulada contendo aproximadamente 1000 registros.
+O projeto utiliza SQLite para armazenar os dados agrícolas gerados pelos sensores simulados.
 
-As variáveis utilizadas foram:
+Tabela principal:
+
+```sql
+CREATE TABLE sensores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    umidade REAL,
+    pH REAL,
+    temperatura REAL,
+    irrigacao REAL,
+    fertilizante REAL,
+    produtividade REAL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+O banco de dados permite:
+
+* Persistência dos dados.
+* Consulta histórica.
+* Integração com Machine Learning.
+* Simulação de ambiente IoT.
+
+---
+
+#  Base de Dados
+
+Foi utilizada uma base agrícola simulada contendo aproximadamente 1000 registros.
+
+Variáveis utilizadas:
 
 | Variável      | Descrição                            |
 | ------------- | ------------------------------------ |
 | Umidade       | Umidade do solo (%)                  |
-| pH            | Nível de acidez do solo              |
+| pH            | Acidez do solo                       |
 | Temperatura   | Temperatura ambiente (°C)            |
 | Irrigação     | Volume de irrigação aplicado         |
 | Fertilizante  | Quantidade de fertilizante utilizada |
 | Produtividade | Rendimento estimado da cultura       |
 
-Esses dados representam condições agrícolas utilizadas para treinamento e validação do modelo preditivo.
-
 ---
 
-## Modelo de Machine Learning
+#  Machine Learning
 
 Foi implementado um modelo de Regressão Linear utilizando a biblioteca Scikit-Learn.
 
-### Variáveis de Entrada
+## Variáveis de Entrada
 
 * Umidade
 * pH
@@ -90,71 +172,137 @@ Foi implementado um modelo de Regressão Linear utilizando a biblioteca Scikit-L
 * Irrigação
 * Fertilizante
 
-### Variável Alvo
+## Variável Alvo
 
 * Produtividade
 
-O conjunto de dados foi dividido em:
+## Divisão dos Dados
 
-* 80% para treinamento
-* 20% para teste
+* 80% Treinamento
+* 20% Teste
 
-Após o treinamento, o modelo foi salvo em formato `.pkl` para utilização no dashboard.
+O modelo treinado é salvo automaticamente para reutilização no dashboard.
 
----
-
-## Avaliação do Modelo
-
-O desempenho do modelo foi avaliado utilizando métricas amplamente empregadas em problemas de regressão:
-
-* MAE (Mean Absolute Error)
-* MSE (Mean Squared Error)
-* RMSE (Root Mean Squared Error)
-* R² (Coeficiente de Determinação)
-
-Essas métricas permitem analisar a precisão das previsões realizadas pelo modelo e verificar sua capacidade de generalização.
+```python
+joblib.dump(modelo, MODELO_PATH)
+```
 
 ---
 
-## Dashboard Interativo
+#  Pipeline de Machine Learning
 
-O dashboard foi desenvolvido utilizando Streamlit e oferece uma interface amigável para gestores agrícolas.
-
-### Funcionalidades
-
-* Visualização dos dados agrícolas.
-* Exibição de métricas gerais da base.
-* Mapa de correlação entre variáveis.
-* Gráfico de distribuição da produtividade.
-* Previsão interativa de produtividade.
-* Recomendações automáticas de manejo agrícola.
-
-O sistema permite que o usuário informe valores relacionados às condições do campo e receba previsões em tempo real.
-
----
-
-## Recomendações Inteligentes
-
-Com base nos valores informados pelo usuário, o sistema fornece sugestões de manejo agrícola, incluindo:
-
-* Recomendação de irrigação quando a umidade está abaixo do ideal.
-* Sugestão de correção do solo quando o pH está inadequado.
-* Orientações relacionadas à fertilização.
-* Indicação de condições favoráveis para cultivo quando os parâmetros estão equilibrados.
-
-Essas recomendações auxiliam o produtor rural na tomada de decisões mais eficientes e sustentáveis.
+```text
+Coleta dos Dados
+        ↓
+Armazenamento CSV e SQLite
+        ↓
+Tratamento dos Dados
+        ↓
+Treino/Teste
+        ↓
+Treinamento
+        ↓
+Avaliação
+        ↓
+Modelo Treinado
+        ↓
+Dashboard
+```
 
 ---
 
-## Como Executar
+#  Métricas de Avaliação
 
-### Instalar dependências
+O desempenho do modelo é avaliado utilizando métricas clássicas de regressão.
+
+## MAE
+
+Mean Absolute Error (Erro Médio Absoluto).
+
+Representa a média dos erros absolutos entre valores previstos e reais.
+
+## MSE
+
+Mean Squared Error (Erro Médio Quadrático).
+
+Penaliza erros maiores ao elevar a diferença ao quadrado.
+
+## RMSE
+
+Root Mean Squared Error.
+
+Versão interpretável do MSE na mesma escala da variável alvo.
+
+## R²
+
+Coeficiente de Determinação.
+
+Indica a capacidade do modelo de explicar a variabilidade dos dados.
+
+---
+
+#  Dashboard Interativo
+
+O dashboard foi desenvolvido utilizando Streamlit.
+
+Funcionalidades disponíveis:
+
+* Visualização dos dados.
+* Indicadores agrícolas.
+* Estatísticas descritivas.
+* Heatmap de correlação.
+* Tendência de produtividade.
+* Simulador de produtividade.
+* Recomendações automáticas.
+* Previsões em tempo real.
+
+---
+
+#  Recomendações Inteligentes
+
+Com base nos valores informados pelo usuário, o sistema pode recomendar:
+
+###  Irrigação
+
+Aumento da irrigação quando a umidade estiver abaixo do ideal.
+
+###  Correção de Solo
+
+Correção do pH quando identificado desequilíbrio.
+
+### Fertilização
+
+Sugestões de aumento da fertilização.
+
+###  Temperatura
+
+Monitoramento de possíveis condições de estresse térmico.
+
+###  Condições Favoráveis
+
+Identificação de cenários adequados para cultivo.
+
+---
+
+#  Como Executar
+
+## Instalar Dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Executar o dashboard
+---
+
+## Executar Menu
+
+```bash
+python src/menu.py
+```
+
+---
+
+## Executar Dashboard
 
 ```bash
 streamlit run app.py
@@ -162,25 +310,63 @@ streamlit run app.py
 
 ---
 
-## Resultados Obtidos
+#  Fluxo de Execução
 
-O projeto demonstrou que técnicas de Machine Learning podem ser aplicadas com sucesso para prever indicadores agrícolas e apoiar a tomada de decisão no campo.
+1. Criar banco de dados.
+2. Gerar dados agrícolas.
+3. Armazenar CSV e SQLite.
+4. Treinar modelo de IA.
+5. Avaliar métricas.
+6. Salvar modelo treinado.
+7. Abrir dashboard.
+8. Realizar previsões.
 
-A integração entre análise de dados, regressão e dashboard interativo permitiu transformar dados agrícolas em informações úteis para planejamento e gestão da produção.
+---
+#  Funcionalidades Implementadas
+
+## Gestão de Dados
+
+* Geração automática de dados.
+* Armazenamento em CSV.
+* Armazenamento em SQLite.
+
+## Inteligência Artificial
+
+* Regressão Linear.
+* Treinamento supervisionado.
+* Persistência do modelo.
+* Avaliação por métricas.
+
+## Dashboard
+
+* Indicadores.
+* Heatmap.
+* Scatter Plot.
+* Tendência de produtividade.
+* Simulações.
+* Recomendações.
 
 ---
 
-## Conclusão
+#  Resultados Obtidos
 
-O desenvolvimento do Assistente Agrícola Inteligente permitiu aplicar conceitos de Inteligência Artificial, Ciência de Dados e Agricultura Cognitiva em um cenário prático.
+O projeto demonstrou a viabilidade da utilização de Inteligência Artificial para análise de dados agrícolas.
 
-A solução mostrou como dados agrícolas podem ser utilizados para gerar previsões e recomendações que contribuem para uma produção mais eficiente, sustentável e orientada por dados.
-
-Além disso, o projeto reforçou a importância da integração entre coleta de dados, modelos preditivos e visualização de informações para apoiar gestores agrícolas na tomada de decisões.
+A integração entre banco de dados, Machine Learning e visualização permitiu transformar dados em informações estratégicas para apoio à tomada de decisão.
 
 ---
 
-## Integrantes
+#  Conclusão
 
-* Gabriele Brito
+O Assistente Agrícola Inteligente permitiu aplicar conceitos de Ciência de Dados, Inteligência Artificial e Agricultura Cognitiva em um cenário prático.
+
+A solução demonstra como dados agrícolas podem ser utilizados para gerar previsões, identificar padrões e fornecer recomendações que contribuem para uma produção mais eficiente, sustentável e orientada por dados.
+
+Além disso, o projeto reforça a importância da integração entre coleta de dados, armazenamento estruturado, aprendizado de máquina e visualização analítica para o futuro do agronegócio.
+
+---
+
+#  Integrantes
+
+* Gabriele Brito Rocha Menezes
 * Gilenisson Santos
