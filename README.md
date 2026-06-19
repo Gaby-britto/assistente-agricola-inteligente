@@ -34,6 +34,17 @@ Essa abordagem permite reduzir desperdícios, otimizar recursos e aumentar a efi
 
 ---
 
+# Metodologia Utilizada
+
+O projeto foi desenvolvido seguindo a metodologia CRISP-DM:
+
+- Business Understanding
+- Data Understanding
+- Data Preparation
+- Modeling
+- Evaluation
+- Deployment
+
 #  Arquitetura da Solução
 
 ```text
@@ -240,7 +251,12 @@ Coeficiente de Determinação.
 Indica a capacidade do modelo de explicar a variabilidade dos dados.
 
 ---
+## Resultados do Modelo
 
+<img width="371" height="190" alt="image" src="https://github.com/user-attachments/assets/0487a6ff-ba33-45d4-bb41-4b688f76b2e0" />
+
+
+---
 #  Dashboard Interativo
 
 O dashboard foi desenvolvido utilizando Streamlit.
