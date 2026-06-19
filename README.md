@@ -381,7 +381,11 @@ A solução demonstra como dados agrícolas podem ser utilizados para gerar prev
 Além disso, o projeto reforça a importância da integração entre coleta de dados, armazenamento estruturado, aprendizado de máquina e visualização analítica para o futuro do agronegócio.
 
 ---
+## 🎥 Apresentação em Vídeo
 
+Link do vídeo: https://youtu.be/ZTmRU3UXW0E
+
+---
 #  Integrantes
 
 * Gabriele Brito Rocha Menezes
